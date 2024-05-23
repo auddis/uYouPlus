@@ -121,6 +121,7 @@ jobs:
       - name: Fix compiling & Build Package
         id: build_package
         run: |
+          mkdir -p theos/lib/iphone/rootless
           cd ${{ github.workspace }}/main
           sed -i '' "27s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
           sed -i '' "26s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile          
